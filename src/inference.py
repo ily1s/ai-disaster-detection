@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import sqlite3
 import pickle
-from keras.preprocessing.sequence import pad_sequences  # type: ignore
+from tensorflow.keras.preprocessing.sequence import pad_sequences  # type: ignore
 from tensorflow.keras.models import model_from_json # type: ignore
 from tensorflow.keras.models import load_model # type: ignore
 
