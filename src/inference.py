@@ -7,14 +7,14 @@ from tensorflow.keras.models import model_from_json # type: ignore
 from tensorflow.keras.models import load_model # type: ignore
 
 # Load model architecture from JSON (since it's actually a JSON file)
-with open("/Users/ilyas/myenv/YARBI/AI4SDG/models/model_architecture.json", "r") as json_file:
+with open("C:/Users/ayoug/ai-disaster-detection/models/model.weights_architecture.json", "r") as json_file:
     model_json = json_file.read()
 
 # Reconstruct model
 model = model_from_json(model_json)
 
 # Load tokenizer
-with open("/Users/ilyas/myenv/YARBI/AI4SDG/models/tokenizer.joblib", "rb") as handle:
+with open("C:/Users/ayoug/ai-disaster-detection/models/tokenizer.joblib", "rb") as handle:
     tokenizer = pickle.load(handle)
 
 # Disaster categories
@@ -41,13 +41,13 @@ def classify_and_update_tweets():
     # Fetch tweets that have not been classified
     cursor.execute("SELECT tweet_id, tweet_text FROM disaster_tweets WHERE disaster_type IS NULL")
     tweets = cursor.fetchall()
-
+    print(tweets)
     for tweet_id, tweet_text in tweets:
         disaster_type = classify_disaster(tweet_text)
-        
+        print(disaster_type+"hahowa")
         # Update database with prediction
         cursor.execute("UPDATE disaster_tweets SET disaster_type = ? WHERE tweet_id = ?", (disaster_type, tweet_id))
-
+    print(classify_disaster(" my house is beautiful today"))
     conn.commit()
     conn.close()
     print("✅ Tweets classified and updated in the database!")
