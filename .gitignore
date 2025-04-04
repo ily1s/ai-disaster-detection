@@ -1,6 +1,6 @@
 .env
 .venv
 tweets.db
-ppp.py
-pipeline.py
-models/Model_Pipeline.ipynb
+/src/ppp.py
+/src/pipeline.py
+/models/Model_Pipeline.ipynb
