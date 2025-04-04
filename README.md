@@ -8,7 +8,7 @@ Traditional disaster detection relies on **news media and official reports**, of
 
 ##  The Data
 - **Source:** Twitter API (real-time tweets)  
-- **Dataset:** Labeled tweets from past disasters (earthquakes, floods, fires)  
+- **Dataset:** Labeled tweets from past disasters (earthquakes, floods, fires,bombing,explosion,huricane)  
 - **Features:** Text content, geolocation, timestamps  
 
 ##  Solution Approach
