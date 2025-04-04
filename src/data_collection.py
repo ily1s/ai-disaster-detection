@@ -45,3 +45,4 @@ def fetch_tweets():
     return [tweet.text for tweet in tweets.data] 
 
 
+

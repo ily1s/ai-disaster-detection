@@ -299,7 +299,7 @@ with tab3:
         st.warning("No recent alerts match your filters.")
 
 # Refresh button
-if st.button("Refresh Data"):
+if st.button("Refresh Data"): 
     st.cache_data.clear()
     st.experimental_rerun()
 
