@@ -60,7 +60,7 @@ pip install -r requirements.txt
 3. Add your Twitter API credentials in config.py
 4. Run the main pipeline
 ```bash
-python run_pipeline.py
+python app.py
 ```
 
 ---
@@ -77,9 +77,4 @@ Feel free to submit issues, feature requests, or pull requests. Let’s build te
 
 ---
 
-## 📄 License
-MIT License
-
----
-
-Built with ❤️ by Team AI4SDG for GITEX 2025
+Built with ❤️ by Team BoTs for GITEX 2025
