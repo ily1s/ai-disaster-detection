@@ -49,7 +49,7 @@ st.markdown("""
 @st.cache_data(ttl=300)
 def load_twitter_data():
     try:
-        twitter_df = pd.read_csv("processed_disaster_tweets.csv", parse_dates=['created_at'])
+        twitter_df = pd.read_csv("content/processed_disaster_tweets.csv", parse_dates=['created_at'])
         twitter_df = twitter_df.rename(columns={'created_at': 'timestamp'})
         twitter_df['reported_by'] = 'Twitter'
         twitter_df['confidence'] = 0.85  # Default confidence for social media
