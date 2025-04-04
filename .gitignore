@@ -1,6 +1,3 @@
 .env
 .venv
 tweets.db
-/src/ppp.py
-/src/pipeline.py
-/Users/ilyas/myenv/YARBI/AI4SDG/models/Model_Pipeline.ipynb
