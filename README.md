@@ -1,37 +1,85 @@
-#  AI-Powered Disaster Detection from Social Media
+# AI4SDG: Real-Time Disaster Detection from Twitter using BERT
 
-##  Introduction
-Disasters strike unexpectedly, and early detection is crucial to saving lives. Our **AI-driven disaster detection system** leverages **social media data** (Twitter) to identify crisis events in real time. By using **NLP and machine learning**, we provide rapid alerts to emergency responders, governments, and humanitarian organizations.
+🌍 An AI-powered system to monitor and classify real-time Twitter data for early detection of disasters and urban emergencies, in support of SDG 11 (Sustainable Cities & Communities).
 
-##  Problem Statement
-Traditional disaster detection relies on **news media and official reports**, often leading to delays. Meanwhile, social media platforms **capture events as they happen**. However, distinguishing real disasters from fake news and irrelevant posts is a challenge. We solve this by using **AI-powered filtering and classification**.
+---
 
-##  The Data
-- **Source:** Twitter API (real-time tweets)  
-- **Dataset:** Labeled tweets from past disasters (earthquakes, floods, fires,bombing,explosion,huricane)  
-- **Features:** Text content, geolocation, timestamps  
+## 🔍 Introduction
+Urban disasters such as floods, earthquakes, fires, and infrastructure failures can result in massive human and economic losses. Conventional alert systems often suffer from delayed reporting. This project introduces an AI-based solution that leverages BERT-based NLP models to detect disaster events from social media, particularly Twitter, in real time. 
 
-##  Solution Approach
-1. **Data Collection** – Stream tweets using **Twitter API**, filtering disaster-related keywords.  
-2. **Text Preprocessing** – Remove noise, extract relevant terms, and detect locations.  
-3. **AI Model** – Fine-tuned **BERT model** to classify tweets as **disaster or non-disaster**.  
-4. **Event Detection** – Analyze tweet frequency and patterns for real-time alerts.  
-5. **Visualization Dashboard** – Display detected disasters on an interactive map.  
+The system is designed to:
+- Detect disaster-related tweets
+- Classify them using a fine-tuned BERT model
+- Extract named entities and geolocation info
+- Trigger alerts when certain thresholds are met
 
-##  Results & Impact
- <li>**High accuracy disaster classification using fine-tuned BERT**  </li>
-<li> **Fast response time** – Alerts generated within minutes of an event  </li>
-<li>**Interactive map** – Visual representation of disaster locations </li>
+---
 
-##  Tech Stack
-- **Python, Flask** – Backend for API & data processing  
-- **Tweepy** – Twitter API for real-time streaming  
-- **Hugging Face Transformers** – BERT for disaster classification  
-- **Scikit-Learn, Pandas** – Data processing & machine learning  
-- **Streamlit / Dash** – Interactive UI for alerts  
+## 📊 Data
+- Source: Twitter Streaming API using relevant keywords ("flood", "earthquake", "fire", "collapse", etc.)
+- Preprocessed to remove retweets, non-English tweets, and spam
+- Annotated disaster tweet dataset from Kaggle (used for fine-tuning)
 
-##  Installation & Usage
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/yourusername/AI-Disaster-Detection.git
-   cd AI-Disaster-Detection
+---
+
+## 🤖 Models
+- BERT base model (transformers library by Hugging Face)
+- Fine-tuned on disaster classification using tweet data
+- Named Entity Recognition (NER) using pretrained model: `dslim/bert-base-NER`
+
+Additional tools:
+- Time-series tweet count analysis for event spike detection
+- Optional: distilBERT for faster inference in real-time applications
+
+---
+
+## 💡 Applications
+- Real-time urban disaster alerting and crisis response
+- Smart city emergency infrastructure
+- Data source for NGOs, rescue services, and government bodies
+- Integration with mobile alerts and dashboards
+
+---
+
+## ✅ Results
+- Achieved classification accuracy > 90% on validation dataset
+- Successful detection of recent disaster events in test runs
+- Alert system triggered based on tweet volume spikes and model confidence
+
+---
+
+## 🚀 Get Started
+1. Clone the repo
+```bash
+git clone https://github.com/your-username/AI4SDG-BERT.git
+```
+2. Install requirements
+```bash
+pip install -r requirements.txt
+```
+3. Add your Twitter API credentials in config.py
+4. Run the main pipeline
+```bash
+python run_pipeline.py
+```
+
+---
+
+## 📎 Resources
+- BERT Disaster Classifier: https://huggingface.co/mrm8488/distilbert-finetuned-disaster
+- Kaggle Disaster Tweets Dataset: https://www.kaggle.com/c/nlp-getting-started
+- Hugging Face NER Model: https://huggingface.co/dslim/bert-base-NER
+
+---
+
+## 🤝 Contributing
+Feel free to submit issues, feature requests, or pull requests. Let’s build tech that saves lives!
+
+---
+
+## 📄 License
+MIT License
+
+---
+
+Built with ❤️ by Team AI4SDG for GITEX 2025
